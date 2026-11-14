@@ -1,18 +1,14 @@
 ---
-slug: dont-rethink-the-same-job
-title: 同一份活，我不想让它每次再想一遍
-excerpt: AgentRun 把重复的知识工作从「每次重新想」收成可复用的流程，Antigravity 则让计划变成一审再跑的脚本。对我来说，一个人用 AI 跑生意，关键不是它今天更会即兴发挥，而是想过一次的活，能被写下来、被我看过，然后再跑。
-date: '2026-11-15'
-publishedAt: '2026-11-15'
-tag: 随笔
-tags: [产品设计, 独立开发, Agent]
-readTime: 7 min
+slug: "dont-rethink-the-same-job"
+title: "同一份活，我不想让它每次再想一遍"
+excerpt: "AgentRun 把重复的知识工作从「每次重新想」收成可复用的流程，Antigravity 则让计划变成一审再跑的脚本。对我来说，一个人用 AI 跑生意，关键不是它今天更会即兴发挥，而是想过一次的活，能被写下来、被我看过，然后再跑。"
+date: "2026-11-15"
+publishedAt: "2026-11-15"
+tag: "随笔"
+tags: []
 status: published
 featured: false
 ---
-
-# 同一份活，我不想让它每次再想一遍
-
 这两天连续撞上两件事。一件是 GREP.AI 把 [AgentRun](https://agentrun.ai/blog/introducing-agentrun-run-smarter-agents-use-fewer-tokens) 开源出来，并在 11 月 13 日前后上了 [Hacker News](https://news.ycombinator.com/item?id=50471650)；另一件是 Google Antigravity 上线了 [Dynamic Workflows](https://antigravity.google/docs/dynamic-workflows/)，用 `/run-workflow` 让模型先写出一段脚本，再去调度一群 Agent。
 
 产品完全不同。可我读下来，被钉住的是同一句不舒服的话：Agent 很会想事情，也很容易把同一件事情，明天再想一遍。
