@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
+    "dev": "npm run sync:content && vite dev",
     "build": "npm run sync:content && node scripts/generate-seo-files.mjs && vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",

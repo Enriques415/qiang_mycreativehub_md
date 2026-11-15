@@ -18,11 +18,10 @@ export const Route = createFileRoute("/courses/$slug")({
       path,
       title: `${entry.title} — 价格与大纲 · 数字旷野`,
       description:
-        entry.excerpt ??
-        `${entry.title}${price}。数字旷野亲手做的课程，附章节大纲与报名入口。`,
+        entry.excerpt ?? `${entry.title}${price}。数字旷野亲手做的课程，附章节大纲与报名入口。`,
       image: entry.cover,
       jsonLd: ldOne(courseLd(entry, path, entry.cover)),
-      keywords: ["独立开发课程", "在线课程", entry.tag].filter(Boolean),
+      keywords: ["独立开发课程", "在线课程", entry.tag].filter((k): k is string => Boolean(k)),
     });
   },
   notFoundComponent: () => (
@@ -145,7 +144,9 @@ function CourseDetail() {
                 立即加入
               </div>
               <div className="flex items-baseline gap-3">
-                <span className="font-display text-5xl text-foreground">{entry.price || "咨询"}</span>
+                <span className="font-display text-5xl text-foreground">
+                  {entry.price || "咨询"}
+                </span>
                 {entry.original && (
                   <span className="font-mono text-sm text-muted-foreground line-through">
                     {entry.original}

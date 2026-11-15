@@ -29,7 +29,12 @@ export type Intent = {
   cta: IntentTarget;
 };
 
-export const intents = [
+// 这里用 readonly Intent[] 而不是 `as const satisfies readonly Intent[]`：
+// as const 会把每个条目的字面量类型单独固化，于是「没有 params 字段的那一条」
+// 在联合类型里就没有 params 这个键，访问 item.cta.params 直接报错（TS2339）。
+// 显式声明成 readonly Intent[] 后，cta 的类型统一是 IntentTarget，
+// params 是可选属性 —— 运行期行为完全不变，只是类型层面说清楚了。
+export const intents: readonly Intent[] = [
   {
     index: "01",
     title: "我想把想法做成能卖的产品",
@@ -106,4 +111,4 @@ export const intents = [
     ],
     cta: { label: "看视频 →", to: "/videos", href: "/videos" },
   },
-] as const satisfies readonly Intent[];
+];

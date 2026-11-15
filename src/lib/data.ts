@@ -57,12 +57,12 @@ export const loadCourses = (): Course[] => publishedCourses;
 export const loadAbout = (): About => aboutObj;
 
 export const findPublishedWriting = <T extends { slug: string; status: string }>(
-  writings: T[],
+  writings: readonly T[],
   slug: string,
 ): T | undefined => writings.find((w) => w.status === "published" && w.slug === slug);
 
 export const findEntryByStatus = <T extends { slug: string; status: string }>(
-  entries: T[],
+  entries: readonly T[],
   slug: string,
   allowedStatuses: ReadonlySet<string>,
 ): T | undefined => entries.find((item) => allowedStatuses.has(item.status) && item.slug === slug);
@@ -79,7 +79,7 @@ export const findVideo = (slug: string): Video | undefined =>
 export const findCourse = (slug: string): Course | undefined =>
   findEntryByStatus(publishedCourses, slug, new Set(["published"]));
 
-export const neighbours = <T extends { slug: string }>(collection: T[], slug: string) => {
+export const neighbours = <T extends { slug: string }>(collection: readonly T[], slug: string) => {
   const i = collection.findIndex((e) => e.slug === slug);
   return {
     prev: i > 0 ? collection[i - 1] : undefined,

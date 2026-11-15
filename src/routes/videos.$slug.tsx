@@ -18,13 +18,14 @@ export const Route = createFileRoute("/videos/$slug")({
     return pageSeo({
       path,
       title: `${entry.title} — 视频 · 数字旷野`,
-      description:
-        entry.excerpt ?? `${entry.title}：数字旷野的独立开发复盘视频${duration}。`,
+      description: entry.excerpt ?? `${entry.title}：数字旷野的独立开发复盘视频${duration}。`,
       type: "video.other",
       publishedTime: entry.publishedAt ?? entry.date,
       image: entry.cover,
       jsonLd: ldOne(videoLd(entry, path, entry.cover)),
-      keywords: ["独立开发视频", entry.platform, "build in public"].filter(Boolean),
+      keywords: ["独立开发视频", entry.platform, "build in public"].filter((k): k is string =>
+        Boolean(k),
+      ),
     });
   },
   notFoundComponent: () => (
