@@ -323,7 +323,8 @@ git push --no-verify
 ```
 
 ⚠️ **别停掉远端那台机器上的同步**。它跑在美国太平洋时区的 Linux 上（提交时间戳
-`-0800`、`/tmp/` 路径都是 Linux 习惯），不在本机；停了文章就没人更新了。
+`-0800`、`/tmp/` 路径都是 Linux 习惯），不在本机；停了文章就没人更新了。它用的推送脚本
+`scripts/push_to_github.py` **保留在仓库里**，本机不运行 —— 见下面那一节。
 
 代价：飞书表里没有的字段（`tags`、`readTime`）不会留在 Markdown 里 —— 同步每次推送
 都会用飞书表的版本覆盖整个文件。**站点的显示不受影响**：`data/*.json` 是提交进版本库的，
@@ -333,12 +334,23 @@ git push --no-verify
 
 - `.github/workflows/sync-feishu.yml` 已删除，GitHub 上每 30 分钟的同步不再运行
 - `scripts/sync-feishu.mjs`、`scripts/fetch-rss.mjs` 及相关测试已删除
-- `scripts/push_to_github.py`（把飞书表格内容推回仓库的脚本）已删除
 - `package.json` 中的 `sync:feishu`、`fetch-rss`、`prebuild` 命令已移除
 - News 页面不再读取 `src/content/news/rss-data.json`，改为读取 `data/news.json`
 
 > GitHub 仓库设置里可能还留有 `FEISHU_*` 相关的 Secrets。旧 workflow 已删、本仓库的新代码
 > 不读；如果远端那台机器上的同步脚本用的是仓库 Secrets，就别删。
+
+### `scripts/push_to_github.py` 保留在仓库里
+
+这个脚本**不属于本地流程**，它是**写入方那台机器**的工具：用 GitHub API 把飞书同步产出的
+`content/writings/` 单次推成提交（父提交取当前远端 head，从不做 merge）。
+
+- **本机永远不运行它。** 本机的内容来源是本地 Markdown → `git push`，由 `.githooks/pre-push`
+  守住「不碰 `content/writings/`」。
+- **保留它，是为了远端那台机器 `git pull` 后能直接调用。** 如果远端那份是从仓库拉的，
+  删掉就等于打断推送链路（文章不再更新）；如果远端那份是独立副本，留着也无害。
+- 它读 token 的顺序：环境变量 `DIGIWILD_GITHUB_TOKEN` → `~/.config/digiwild-sync/github_token`
+  （600）→ macOS 钥匙串（Linux 上这步会走 try/except 跳过）。密钥不出现在仓库里。
 
 ## 📮 发布一篇文章
 
