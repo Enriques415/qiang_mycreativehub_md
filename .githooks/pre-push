@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+# 本地推送不包含 content/writings/ —— 那个目录由飞书同步独占。
+#
+# 为什么要有这道拦截：
+#   content/writings/*.md 有两个写入者 —— 本地和飞书同步。飞书同步用 GitHub API
+#   直接推覆盖提交，而且从不做 merge（父提交取当前远端 head），所以它永远不报冲突、
+#   永远赢。本地再往同一个目录推，就变成两个写入者互相覆盖，而且没有一方会提示。
+#
+#   唯一的解法是「一个目录只让一个写入者写」。这个钩子负责把本地从写入者里摘出去：
+#   本地只推代码，文章由飞书同步负责。
+#
+# 怎么用：
+#   本仓库已经把 core.hooksPath 指向 .githooks（见 README）。
+#   别的 clone 需要手动开一次：git config core.hooksPath .githooks
+#
+# 绕过方式（确实要推 content/writings/ 时）：
+#   git push --no-verify
+
+set -uo pipefail
+
+GUARDED_PATH="content/writings"
+EMPTY_TREE="4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+ZERO="0000000000000000000000000000000000000000"
+
+remote_name="${1:-origin}"
+remote_url="${2:-}"
+
+# 没有 remote_url 的场景（比如 git push --dry-run 的某些形态）直接放行
+if [ -z "$remote_url" ]; then
+  exit 0
+fi
+
+blocked=0
+
+# git 把每次 ref 更新按 "<local_ref> <local_sha> <remote_ref> <remote_sha>" 逐行喂给钩子
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -z "${local_sha:-}" ] && continue
+
+  base="$remote_sha"
+  if [ "$base" = "$ZERO" ]; then
+    base="$EMPTY_TREE"   # 新分支，跟空树比
+  fi
+
+  changed="$(git diff --name-only "$base" "$local_sha" -- "$GUARDED_PATH" 2>/dev/null)"
+  if [ -n "$changed" ]; then
+    if [ "$blocked" -eq 0 ]; then
+      echo ""
+      echo "⛔ 这次推送包含 $GUARDED_PATH/ 的改动 —— 那个目录由飞书同步独占，本地推送不应带它。"
+      echo ""
+      echo "   被拦下的文件："
+      echo "$changed" | sed 's/^/       /'
+      echo ""
+      echo "   要只推代码，请先把这些改动从提交里摘掉："
+      echo "       git fetch origin"
+      echo "       git checkout origin/main -- $GUARDED_PATH/"
+      echo '       git commit -m "chore: 撤回 content/writings 改动"'
+      echo "       git push"
+      echo ""
+      echo "   确实要推（比如你要紧急发布一篇文章）：git push --no-verify"
+      echo ""
+    fi
+    blocked=1
+  fi
+done
+
+exit "$blocked"

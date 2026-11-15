@@ -19,7 +19,7 @@
 
 ## 📝 内容发布工作流
 
-全部内容都以本地 Markdown 为唯一来源，存放在本仓库的 `content/`：
+全部内容都以 Markdown 为唯一来源，存放在本仓库的 `content/`：
 
 ```text
 content/
@@ -31,8 +31,8 @@ content/
   about.md             关于页面（单文件）
 ```
 
-内容只有一条路径：**本地 Markdown → git push → Cloudflare Pages 自动构建**。
-没有飞书同步、没有 RSS 抓取、没有定时任务 —— 没有任何外部流程会改写 `content/` 或 `data/*.json`。
+内容有两个来源，但**每个目录只有一个写入者**（见下面「内容目录的写入权」）：
+代码走本地，文章走飞书同步。
 
 ### 通用规则
 
@@ -300,46 +300,68 @@ _打包后的静态文件将生成在 `dist/` 目录中。_
 4. push 到 `main` 后，Cloudflare Pages 自动构建部署。
 5. 仓库中的 `.github/workflows/deploy.yml` 是旧 GitHub Pages 路径；如果 GitHub Pages 仍启用，push 后也会触发一次旧部署。
 
-## 🗂 已移除的自动化
+## 🗂 内容目录的写入权
 
-本项目历史上使用过飞书多维表格同步和 RSS 自动抓取，两条链路已彻底退役：
+`content/writings/` 只有一个写入者：**飞书多维表格同步**。
 
-- `.github/workflows/sync-feishu.yml` 已删除，GitHub 上每 30 分钟的飞书同步不再运行
+| 目录                | 谁写                            | 怎么写                      |
+| ------------------- | ------------------------------- | --------------------------- |
+| `content/writings/` | 飞书同步（远端那台 Linux 机器） | 用 GitHub API 直接推 `main` |
+| 其余代码与内容      | 本地                            | `git push origin main`      |
+
+**本地推送不包含 `content/writings/`** —— `.githooks/pre-push` 会在 push 时拦下任何
+改动这个目录的提交，逼你先把它们摘掉再推代码。原因是飞书同步用 API 推覆盖提交、
+**从不做 merge**（父提交取当前远端 head），所以它永远不报冲突、永远赢；本地再往
+同一个目录推，就变成两个写入者互相覆盖，而且没有一方会提示。
+
+```bash
+# 本仓库已配好 core.hooksPath；其它 clone 手动开一次：
+git config core.hooksPath .githooks
+
+# 确实要推 content/writings/ 时（例如紧急发一篇文章）：
+git push --no-verify
+```
+
+⚠️ **别停掉远端那台机器上的同步**。它跑在美国太平洋时区的 Linux 上（提交时间戳
+`-0800`、`/tmp/` 路径都是 Linux 习惯），不在本机；停了文章就没人更新了。
+
+代价：飞书表里没有的字段（`tags`、`readTime`）不会留在 Markdown 里 —— 同步每次推送
+都会用飞书表的版本覆盖整个文件。**站点的显示不受影响**：`data/*.json` 是提交进版本库的，
+同步脚本会继承它里面缺失的字段，所以线上照常显示阅读时长和标签。
+
+### 已从仓库移除的旧自动化
+
+- `.github/workflows/sync-feishu.yml` 已删除，GitHub 上每 30 分钟的同步不再运行
 - `scripts/sync-feishu.mjs`、`scripts/fetch-rss.mjs` 及相关测试已删除
 - `scripts/push_to_github.py`（把飞书表格内容推回仓库的脚本）已删除
 - `package.json` 中的 `sync:feishu`、`fetch-rss`、`prebuild` 命令已移除
 - News 页面不再读取 `src/content/news/rss-data.json`，改为读取 `data/news.json`
 
-> ⚠️ **代码删了不等于链路停了 —— 还有两件事要在远端做**
->
-> 1. **停掉远端机器上的定时同步**。飞书同步脚本跑在一台美国太平洋时区的 Linux 机器上
->    （提交时间戳是 `-0800`，`/tmp/` 路径也是 Linux 习惯），不在本机。它还会用 GitHub API
->    直接往 `content/writings/` 推覆盖提交，**把文章正文和 frontmatter 一起盖回去**。
->    请到那台机器上停掉定时任务（cron / systemd timer / CI 定时），否则它会一直推。
-> 2. **清理 GitHub 仓库设置里的 `FEISHU_*` Secrets**（Settings → Secrets and variables → Actions）。
->    新代码不读它们，留着没坏处，但留着容易误导。
+> GitHub 仓库设置里可能还留有 `FEISHU_*` 相关的 Secrets。旧 workflow 已删、本仓库的新代码
+> 不读；如果远端那台机器上的同步脚本用的是仓库 Secrets，就别删。
 
-## 📮 发布一篇新文章
+## 📮 发布一篇文章
 
-唯一路径，没有第二条：
+文章在飞书多维表格里写、在那里改；本地不碰 `content/writings/`。
 
 ```bash
-# 1. 写 content/writings/<slug>.md
-#    文件名必须等于 frontmatter 里的 slug；slug 只允许小写英文、数字和连字符
-#    published 文章记得写 readTime —— 作者手填，列表卡片和详情页都会显示
+# 1. 在飞书表里写好文章（标题 / 正文 / 链接等字段）
+# 2. 远端那台机器上的同步脚本把它推成 content/writings/<slug>.md
+# 3. Cloudflare Pages 收到 main 的 push，自动构建部署
+```
 
-# 2. 提交并推送
-git add content/writings/<slug>.md
-git commit -m "publish: <文章标题>"
+本地这边只推代码：
+
+```bash
+git add src/ scripts/ ...
+git commit -m "fix: ..."
 git push origin main
-
-# 3. Cloudflare Pages 自动构建部署；Markdown 校验不过会直接失败，不会带着旧数据发布
 ```
 
 `npm run build` 会先跑 `npm run sync:content`，把 `content/*.md` 编译成 `data/*.json`。
-所以**只需要维护 Markdown** —— `data/*.json` 是产物，不用手改。
+`data/*.json` 是产物，不用手改（虽然也提交进仓库）。
 
 > 同步脚本会继承上一版 `data/*.json` 里「本次 Markdown 缺失」的 `tags` / `readTime`，
-> 这样任何一次覆盖或手改都不会把作者填的字段弄丢。
+> 所以飞书表里没有这些字段，也不会让线上显示为空。
 
 内容回滚方式：用 Git 回退对应的提交即可。
