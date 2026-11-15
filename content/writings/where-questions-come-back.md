@@ -1,18 +1,14 @@
 ---
-slug: where-questions-come-back
-title: 能并行还不够，我更在意问题回到哪
-excerpt: Anthropic 给 Claude Code 的 Projects 加了 coordinator：你只跟一个入口说话，并行的线程自己去跑，有结果或问题再汇总回来。Boris Cherny 说，真正难受的是注意力被拆碎。对我来说，一个人用 AI 跑生意，稀缺的不是又能多开几路 Agent，而是问题还能回到同一处。
-date: '2026-11-16'
-publishedAt: '2026-11-16'
-tag: 随笔
-tags: [产品设计, 独立开发, Agent]
-readTime: 6 min
+slug: "where-questions-come-back"
+title: "能并行还不够，我更在意问题回到哪"
+excerpt: "Anthropic 给 Claude Code 的 Projects 加了 coordinator：你只跟一个入口说话，并行的线程自己去跑，有结果或问题再汇总回来。Boris Cherny 说，真正难受的是注意力被拆碎。对我来说，一个人用 AI 跑生意，稀缺的不是又能多开几路 Agent，而是问题还能回到同一处。"
+date: "2026-11-16"
+publishedAt: "2026-11-16"
+tag: "随笔"
+tags: []
 status: published
 featured: false
 ---
-
-# 能并行还不够，我更在意问题回到哪
-
 昨天在 Hacker News 上刷到 Claude Code 团队的 Boris Cherny 解释 [Projects](https://code.claude.com/docs/en/claude-projects) 里 coordinator 的动机。他说得很直白：模型越能干，人们就越容易同时开出好几路 Agent；活是能并行了，可自己的注意力也被一并拆碎，那种感觉很糟糕。
 
 我的判断很简单。一个人用 AI 把生意跑起来，真正稀缺的不是又能多开几路干活的 Agent，而是有一个入口，把做完的结果和必须我拍板的问题，收回到同一处。

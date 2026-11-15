@@ -5,8 +5,7 @@ excerpt: "n8n Labs 发布了能在真实网页上办事的个人 Agent Nod。我
 date: "2026-11-13"
 publishedAt: "2026-11-13"
 tag: "随笔"
-tags: [产品设计, 独立开发, Agent]
-readTime: 6 min
+tags: []
 status: published
 featured: false
 ---
