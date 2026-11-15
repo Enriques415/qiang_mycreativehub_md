@@ -508,13 +508,11 @@ function isBlankField(value) {
 /**
  * 继承上一版 JSON 里「这次 md 里没有」的作者手填字段。
  *
- * 背景：飞书多维表格的同步会用一份 frontmatter 不全的 .md 覆盖 content/writings/*.md，
- * 把作者手填的 tags / readTime 抹掉。实测两次：commit 5042095（2026-11-13 同步）抹掉了
- * ask-me-before-it-acts 的 readTime，commit 6aeef0c（2026-11-15 同步）抹掉了
- * dont-rethink-the-same-job 的 readTime —— 前者直接让文章卡片和详情页的阅读时长消失。
- *
- * 写 .md 的那个脚本（sync_feishu_drafts.py）不在本仓库里，所以兜底放在生成 JSON 这一层：
- * md 里缺、上一版 JSON 里有的字段，按 slug 继承回来。
+ * 背景：本项目曾经有另一条链路（飞书多维表格同步），会用一份 frontmatter 不全的 .md
+ * 覆盖 content/writings/*.md，把作者手填的 tags / readTime 抹掉 —— 实测两次
+ * （commit 5042095、6aeef0c），文章卡片和详情页的阅读时长直接消失。
+ * 那条链路已退役，但「任何一次覆盖或手改都可能丢字段」这件事不会消失，
+ * 所以兜底留在生成 JSON 这一层：md 里缺、上一版 JSON 里有的字段，按 slug 继承回来。
  *
  * 规则：md 里显式写了值 → 永远用 md 的；只有 md 里「没有 / 为空数组」才继承。
  * data/*.json 是提交进版本库的，等于作者意图的留档，继承它不会丢信息。

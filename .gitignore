@@ -38,6 +38,3 @@ dist-ssr
 
 # Python 缓存
 __pycache__/
-
-# 本地飞书同步脚本：含飞书表格 app_token，不公开
-scripts/sync_feishu_drafts.py
