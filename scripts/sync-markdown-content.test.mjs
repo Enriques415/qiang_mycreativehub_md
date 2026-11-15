@@ -295,3 +295,77 @@ test("syncAll fails when a collection directory or about file is missing", () =>
     /about source file does not exist:/,
   );
 });
+
+test("syncAll carries over author-set fields that the markdown lost", () => {
+  // 回归：飞书同步会用一份 frontmatter 不全的 .md 覆盖文章，把作者手填的 readTime 抹掉，
+  // 结果文章卡片和详情页的阅读时长直接消失（commit 5042095 / 6aeef0c 实测过两次）。
+  // 上一版 data/*.json 是提交进版本库的留档，所以从那里继承回来。
+  const root = legalContentRoot();
+  const options = {
+    contentDirectory: root.content,
+    publicDirectory: root.publicDir,
+    dataDirectory: root.data,
+  };
+  write(
+    path.join(root.content, "writings/my-post.md"),
+    `---\nslug: my-post\ntitle: 我的文章\ndate: 2026-10-30\nstatus: published\ntags: []\nfeatured: true\n---\n\n## 正文\n`,
+  );
+  fs.writeFileSync(
+    path.join(root.data, "writings.json"),
+    JSON.stringify(
+      { writings: [{ slug: "my-post", tags: ["产品设计", "独立开发"], readTime: "6 min" }] },
+      null,
+      2,
+    ),
+  );
+
+  syncAll(options);
+
+  const writings = JSON.parse(fs.readFileSync(path.join(root.data, "writings.json"), "utf8"));
+  assert.equal(writings.writings[0].readTime, "6 min");
+  assert.deepEqual(writings.writings[0].tags, ["产品设计", "独立开发"]);
+});
+
+test("syncAll prefers the markdown value over the carried-over one", () => {
+  // md 里显式写了值 → 永远用 md 的，继承只在 md 缺字段时兜底。
+  const root = legalContentRoot();
+  const options = {
+    contentDirectory: root.content,
+    publicDirectory: root.publicDir,
+    dataDirectory: root.data,
+  };
+  write(
+    path.join(root.content, "writings/my-post.md"),
+    `---\nslug: my-post\ntitle: 我的文章\ndate: 2026-10-30\nstatus: published\ntags:\n  - 独立开发\nreadTime: 9 min\nfeatured: true\n---\n\n## 正文\n`,
+  );
+  fs.writeFileSync(
+    path.join(root.data, "writings.json"),
+    JSON.stringify(
+      { writings: [{ slug: "my-post", tags: ["产品设计"], readTime: "6 min" }] },
+      null,
+      2,
+    ),
+  );
+
+  syncAll(options);
+
+  const writings = JSON.parse(fs.readFileSync(path.join(root.data, "writings.json"), "utf8"));
+  assert.equal(writings.writings[0].readTime, "9 min");
+  assert.deepEqual(writings.writings[0].tags, ["独立开发"]);
+});
+
+test("syncAll survives a corrupt previous JSON", () => {
+  // 上一版 JSON 坏了不能拖垮同步 —— 当作没有历史值，重新生成即可。
+  const root = legalContentRoot();
+  fs.writeFileSync(path.join(root.data, "writings.json"), "{ this is not json");
+
+  const changed = syncAll({
+    contentDirectory: root.content,
+    publicDirectory: root.publicDir,
+    dataDirectory: root.data,
+  });
+
+  assert.ok(changed.includes("writings.json"));
+  const writings = JSON.parse(fs.readFileSync(path.join(root.data, "writings.json"), "utf8"));
+  assert.equal(writings.writings[0].slug, "my-post");
+});

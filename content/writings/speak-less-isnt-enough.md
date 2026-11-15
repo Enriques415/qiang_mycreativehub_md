@@ -5,7 +5,8 @@ excerpt: "Julius Brussee 把「让 Claude 像洞穴人一样少说话」的笑�
 date: "2026-11-14"
 publishedAt: "2026-11-14"
 tag: "随笔"
-tags: []
+tags: [产品设计, 独立开发, Agent]
+readTime: 7 min
 status: published
 featured: false
 ---

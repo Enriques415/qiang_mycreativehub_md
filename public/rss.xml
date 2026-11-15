@@ -6,7 +6,21 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[同一份活，我不想让它每次再想一遍]]></title>
+      <link>https://digiwild.cc/writing/dont-rethink-the-same-job</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/dont-rethink-the-same-job</guid>
+      <description><![CDATA[AgentRun 把重复的知识工作从「每次重新想」收成可复用的流程，Antigravity 则让计划变成一审再跑的脚本。对我来说，一个人用 AI 跑生意，关键不是它今天更会即兴发挥，而是想过一次的活，能被写下来、被我看过，然后再跑。]]></description>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[少说话不够，我更在意它每次重读了什么]]></title>
+      <link>https://digiwild.cc/writing/speak-less-isnt-enough</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/speak-less-isnt-enough</guid>
+      <description><![CDATA[Julius Brussee 把「让 Claude 像洞穴人一样少说话」的笑话做成了 Caveman Code。我更在意的不是它说得少，而是他后来量出来的事实：真正贵的，是模型每一轮重新读进去的那些东西。]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[先问我，再替我动手]]></title>
       <link>https://digiwild.cc/writing/ask-me-before-it-acts</link>

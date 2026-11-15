@@ -271,8 +271,11 @@ function isRealImage(filePath) {
   if (IMAGE_MAGIC.some((m) => m.bytes.every((b, i) => head[i] === b))) return true;
 
   // RIFF....WEBP
-  if (head.subarray(0, 4).toString("ascii") === "RIFF" &&
-      head.subarray(8, 12).toString("ascii") === "WEBP") return true;
+  if (
+    head.subarray(0, 4).toString("ascii") === "RIFF" &&
+    head.subarray(8, 12).toString("ascii") === "WEBP"
+  )
+    return true;
 
   // ....ftypheic / ftypavif
   if (head.subarray(4, 8).toString("ascii") === "ftyp") return true;
@@ -474,6 +477,70 @@ function publicEntry(entry) {
   return output;
 }
 
+/**
+ * 需要跨同步保留的「作者手填字段」。
+ *
+ * 只放不能被推导出来的字段：readTime 是作者自己标的（实测与正文字数完全不成比例，
+ * 同样长度的文章标的时长能差十几倍），所以只能继承，不能按字数算。
+ */
+const CARRIED_FIELDS = {
+  writings: ["tags", "readTime"],
+};
+
+function readPreviousEntries(outputFile, property) {
+  if (!fs.existsSync(outputFile)) return [];
+  try {
+    const parsed = JSON.parse(fs.readFileSync(outputFile, "utf8"));
+    const list = parsed?.[property];
+    return Array.isArray(list) ? list : [];
+  } catch {
+    // 上一版 JSON 坏了不能拖垮同步 —— 当作没有历史值，重新生成即可
+    return [];
+  }
+}
+
+function isBlankField(value) {
+  if (value === undefined || value === null) return true;
+  if (Array.isArray(value)) return value.length === 0;
+  return false;
+}
+
+/**
+ * 继承上一版 JSON 里「这次 md 里没有」的作者手填字段。
+ *
+ * 背景：飞书多维表格的同步会用一份 frontmatter 不全的 .md 覆盖 content/writings/*.md，
+ * 把作者手填的 tags / readTime 抹掉。实测两次：commit 5042095（2026-11-13 同步）抹掉了
+ * ask-me-before-it-acts 的 readTime，commit 6aeef0c（2026-11-15 同步）抹掉了
+ * dont-rethink-the-same-job 的 readTime —— 前者直接让文章卡片和详情页的阅读时长消失。
+ *
+ * 写 .md 的那个脚本（sync_feishu_drafts.py）不在本仓库里，所以兜底放在生成 JSON 这一层：
+ * md 里缺、上一版 JSON 里有的字段，按 slug 继承回来。
+ *
+ * 规则：md 里显式写了值 → 永远用 md 的；只有 md 里「没有 / 为空数组」才继承。
+ * data/*.json 是提交进版本库的，等于作者意图的留档，继承它不会丢信息。
+ */
+function carryOverAuthoredFields(kind, entries, previous) {
+  const fields = CARRIED_FIELDS[kind];
+  if (!fields || previous.length === 0) return entries;
+
+  const bySlug = new Map(previous.map((entry) => [entry.slug, entry]));
+  for (const entry of entries) {
+    const old = bySlug.get(entry.slug);
+    if (!old) continue;
+    for (const field of fields) {
+      if (!isBlankField(entry[field]) || isBlankField(old[field])) continue;
+      const oldValue = old[field];
+      // 继承来的值要过一遍类型闸：上一版 JSON 万一被改坏，不能把脏数据带进产物
+      const typeOk = Array.isArray(oldValue)
+        ? oldValue.every((item) => typeof item === "string")
+        : typeof oldValue === "string";
+      if (!typeOk) continue;
+      entry[field] = oldValue;
+    }
+  }
+  return entries;
+}
+
 export function syncAll({ contentDirectory, publicDirectory, dataDirectory }) {
   const collections = Object.fromEntries(
     Object.entries(COLLECTION_CONFIG).map(([kind, config]) => {
@@ -488,7 +555,13 @@ export function syncAll({ contentDirectory, publicDirectory, dataDirectory }) {
 
   const changed = [];
   for (const [kind, { entries, config }] of Object.entries(collections)) {
-    const sorted = entries
+    const outputFile = path.join(dataDirectory, config.output);
+    const merged = carryOverAuthoredFields(
+      kind,
+      entries,
+      readPreviousEntries(outputFile, config.property),
+    );
+    const sorted = merged
       .sort((a, b) => {
         const orderA = typeof a.order === "number" ? a.order : 0;
         const orderB = typeof b.order === "number" ? b.order : 0;
@@ -496,7 +569,6 @@ export function syncAll({ contentDirectory, publicDirectory, dataDirectory }) {
         return String(a.slug).localeCompare(String(b.slug));
       })
       .map(publicEntry);
-    const outputFile = path.join(dataDirectory, config.output);
     if (writeJsonIfChanged(outputFile, { [config.property]: sorted })) changed.push(config.output);
   }
 

@@ -5,7 +5,8 @@ excerpt: "AgentRun 把重复的知识工作从「每次重新想」收成可复�
 date: "2026-11-15"
 publishedAt: "2026-11-15"
 tag: "随笔"
-tags: []
+tags: [产品设计, 独立开发, Agent]
+readTime: 7 min
 status: published
 featured: false
 ---
