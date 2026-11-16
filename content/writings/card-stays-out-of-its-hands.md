@@ -1,18 +1,14 @@
 ---
-slug: card-stays-out-of-its-hands
-title: 能代我付款还不够，我更在意卡在谁手里
-excerpt: OpenAI 给 ChatGPT 的个人 Agent dots 加了钱包：卡只存一次，每次购买要你核对并做生物识别，真正拿去结账的是支付网络生成的令牌，真实卡号不会进 Agent 或商家手里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能代付，而是卡始终不经过它。
-date: '2026-11-17'
-publishedAt: '2026-11-17'
-tag: 随笔
-tags: [产品设计, 独立开发, 经营]
-readTime: 6 min
-status: published
+slug: "card-stays-out-of-its-hands"
+title: "能代我付款还不够，我更在意卡在谁手里"
+excerpt: "OpenAI 给 ChatGPT 的个人 Agent dots 加了钱包：卡只存一次，每次购买要你核对并做生物识别，真正拿去结账的是支付网络生成的令牌，真实卡号不会进 Agent 或商家手里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能代付，而是卡始终不经过它。"
+date: "2026-11-17"
+publishedAt: "2026-11-17"
+tag: "随笔"
+tags: []
+status: draft
 featured: false
 ---
-
-# 能代我付款还不够，我更在意卡在谁手里
-
 上周五，也就是 11 月 13 日，OpenAI 发布了 [ChatGPT Wallet](https://openai.com/index/introducing-chatgpt-wallet/)。官方的说法很明确：这是第一个让 Agent 能付款、却拿不到用户真实卡号的钱包；每一笔都要经过一次安全校验。
 
 我的判断也很简单。一个人用 AI 把生意跑起来，真正要看的不是它终于能代我结账，而是卡有没有进它手里。确认很重要，但确认之前，凭证本身就不该出现在对话里。
