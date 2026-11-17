@@ -1,18 +1,14 @@
 ---
-slug: sandbox-isnt-the-boundary
-title: 沙箱开了还不够，我更在意它碰得到什么
-excerpt: Simon Willison 和 Prime Radiant 在 11 月 16 日放出「外部沙箱」原型：Agent 留在你的 Mac 上，命令进到只能看到你挂载目录、默认没有外网的 Linux 环境里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能自己跑命令，而是沙箱开了之后，边界到底画在哪。
-date: '2026-11-18'
-publishedAt: '2026-11-18'
-tag: 随笔
-tags: [产品设计, 独立开发, Agent]
-readTime: 7 min
+slug: "sandbox-isnt-the-boundary"
+title: "沙箱开了还不够，我更在意它碰得到什么"
+excerpt: "Simon Willison 和 Prime Radiant 在 11 月 16 日放出「外部沙箱」原型：Agent 留在你的 Mac 上，命令进到只能看到你挂载目录、默认没有外网的 Linux 环境里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能自己跑命令，而是沙箱开了之后，边界到底画在哪。"
+date: "2026-11-18"
+publishedAt: "2026-11-18"
+tag: "随笔"
+tags: []
 status: published
 featured: false
 ---
-
-# 沙箱开了还不够，我更在意它碰得到什么
-
 11 月 16 日，Simon Willison 在 Prime Radiant 的博客里发了 [External sandboxes for coding agents](https://blog.primeradiant.com/external-sandboxes-for-coding-agents/)。一起放出的，还有三套能跑起来的原型，以及给 Claude Code、Codex 和 Pi 的对接说明。
 
 他要解决的问题，我自己也每天碰到。Coding Agent 会搞错。搞错的时候，凡是它读得到、改得到的东西，都可能被弄坏，或者被带出去。常见的应对就两条：要么把整台电脑和外网都交给它，再祈祷别出事；要么每一步都要我点头。后一种他写得很狠：慢，而且很快就会点到麻木，问题还没看清，手已经先批准了。
