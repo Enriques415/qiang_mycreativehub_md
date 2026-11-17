@@ -1,9 +1,16 @@
-name: Build and Deploy
+name: Legacy GitHub Pages (手动发布备用)
+
+# ⚠️ 线上部署路径只有一条：push 到 main → Cloudflare Pages 自动构建部署。
+# （Cloudflare Pages 项目的 Git 集成：构建命令 `npm run build`，输出目录 `dist/client`）
+#
+# 这个 workflow 是旧的 GitHub Pages 路径。原先它在 push 到 main 时也会自动跑一遍，
+# 于是每次推代码会同时触发两次部署（GitHub Pages + Cloudflare Pages），
+# 两个站点的内容可能不同步，还会在搜索引擎眼里变成重复内容。
+#
+# 现在改成**只能手动触发**：Actions 页面 → Run workflow。
+# 需要临时往 GitHub Pages 发一版时再用它。
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:

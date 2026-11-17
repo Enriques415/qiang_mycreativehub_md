@@ -7,7 +7,8 @@
 本项目采用了前端完全静态化、核心业务后端分离的架构设计。这种设计兼顾了**访问速度**、**零服务器成本**与未来的**商业变现扩展性**。
 
 - **主站展示（当前项目）**：
-  - **部署方案**：部署于 Cloudflare Pages；仓库同时保留 GitHub Pages 工作流作为旧部署路径。
+  - **部署方案**：部署于 Cloudflare Pages。**唯一部署路径**：push 到 `main` → Cloudflare Pages 自动构建部署。
+    仓库里的 `.github/workflows/deploy.yml` 是旧的 GitHub Pages 路径，已改成只能手动触发，不会再随 push 自动部署。
   - **内容来源**：全部内容使用本地 Markdown，通过 Git 版本控制，同步后自动部署。
   - **技术栈**：React, Vite, TanStack Router, Tailwind CSS, shadcn/ui。
 - **业务系统（未来计划）**：
@@ -294,11 +295,14 @@ _打包后的静态文件将生成在 `dist/` 目录中。_
 
 ## 🚀 Cloudflare Pages 部署
 
+**这是本仓库唯一的部署路径。** 记住这一句就够了：*代码推上去，Cloudflare 自己构建、自己上线。*
+
 1. Cloudflare Pages 项目连接 GitHub 仓库，生产分支设为 `main`。
 2. 构建命令使用 `npm run build`，输出目录使用 `dist/client`。
 3. `npm run build` 会先执行 `npm run sync:content`，再构建站点；Markdown 校验失败时部署会失败。
-4. push 到 `main` 后，Cloudflare Pages 自动构建部署。
-5. 仓库中的 `.github/workflows/deploy.yml` 是旧 GitHub Pages 路径；如果 GitHub Pages 仍启用，push 后也会触发一次旧部署。
+4. push 到 `main` 后，Cloudflare Pages 自动构建部署 —— 本地不需要跑任何部署命令。
+5. 仓库中的 `.github/workflows/deploy.yml` 是旧 GitHub Pages 路径，**已改成只能手动触发**（Actions → Run workflow），
+   push 不会再触发第二次部署。要临时往 GitHub Pages 发一版时手动跑它。
 
 ## 🗂 内容目录的写入权
 
