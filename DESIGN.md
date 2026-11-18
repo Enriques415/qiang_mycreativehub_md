@@ -160,6 +160,13 @@ bg-background text-primary-text border-hairline
 恢复「跟随系统」需要清掉 localStorage 的 digiwild-theme。
 ```
 
+视觉基准（线上实测截图）：
+
+| 主题 | 参考图 |
+|---|---|
+| 浅色（暖纸白 + 深绿） | `docs/theme-light.png` |
+| 深色（暖黑 + 电绿） | `docs/theme-dark.png` |
+
 ---
 
 ## 3. 字体系统
