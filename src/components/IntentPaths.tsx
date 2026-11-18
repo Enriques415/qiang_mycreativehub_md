@@ -17,7 +17,7 @@ const TargetLink = Link as unknown as React.ComponentType<{
 
 function TrailLink({ target }: { target: IntentTarget }) {
   return (
-    <TargetLink to={target.to} params={target.params} className="transition-colors hover:text-primary">
+    <TargetLink to={target.to} params={target.params} className="transition-colors hover:text-primary-text">
       {target.label}
     </TargetLink>
   );
@@ -34,12 +34,12 @@ export function IntentPaths({ compact = false }: { compact?: boolean } = {}) {
         <div className="mb-10 grid grid-cols-1 items-end gap-6 md:grid-cols-12">
           <div className="md:col-span-8">
             <div className="mb-4 flex items-center gap-3 font-mono text-xs text-muted-foreground">
-              <span className="text-primary">00</span>
+              <span className="text-primary-text">00</span>
               <span className="h-px w-8 bg-hairline" />
               <span className="uppercase tracking-[0.2em]">Start Here</span>
             </div>
             <h2 className="font-display text-balance text-4xl font-light leading-[1.1] tracking-tight md:text-5xl">
-              你想<em className="italic text-primary">做什么</em>？
+              你想<em className="italic text-primary-text">做什么</em>？
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
               不知道该从哪开始也没关系 —— 挑一个最像你现在处境的，剩下的路跟我一起探索。
@@ -48,7 +48,7 @@ export function IntentPaths({ compact = false }: { compact?: boolean } = {}) {
           <div className="md:col-span-4 md:text-right">
             <Link
               to="/start-here"
-              className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+              className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
             >
               完整路线图 →
             </Link>
@@ -70,11 +70,11 @@ export function IntentPaths({ compact = false }: { compact?: boolean } = {}) {
                 路径链用 relative z-10 浮在拉伸层之上，保持各自可点。
               */}
               <div className="group relative grid grid-cols-12 items-baseline gap-4 py-6 transition-colors hover:bg-surface md:gap-8">
-                <div className="col-span-3 font-mono text-xs text-primary md:col-span-1">
+                <div className="col-span-3 font-mono text-xs text-primary-text md:col-span-1">
                   {item.index}
                 </div>
                 <div className="col-span-9 md:col-span-6">
-                  <h3 className="font-display text-xl font-normal leading-snug text-foreground transition-colors group-hover:text-primary md:text-2xl">
+                  <h3 className="font-display text-xl font-normal leading-snug text-foreground transition-colors group-hover:text-primary-text md:text-2xl">
                     <TargetLink
                       to={item.cta.to}
                       params={item.cta.params}
@@ -92,12 +92,12 @@ export function IntentPaths({ compact = false }: { compact?: boolean } = {}) {
                 <div className="col-span-12 font-mono text-xs text-muted-foreground md:col-span-4">
                   {item.trail.map((t, i) => (
                     <span key={t.href} className="relative z-10 inline-block">
-                      {i > 0 && <span className="mx-2 text-primary">→</span>}
+                      {i > 0 && <span className="mx-2 text-primary-text">→</span>}
                       <TrailLink target={t} />
                     </span>
                   ))}
                 </div>
-                <div className="col-span-12 text-right font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary md:col-span-1">
+                <div className="col-span-12 text-right font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary-text md:col-span-1">
                   →
                 </div>
               </div>

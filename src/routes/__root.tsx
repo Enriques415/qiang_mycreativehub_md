@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
+import { themeInitScript } from "@/lib/theme";
 
 import appCss from "../styles.css?url";
 
@@ -7,7 +8,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">404</div>
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary-text">404</div>
         <h1 className="mt-4 font-display text-4xl font-light text-foreground">这个页面不存在</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           链接可能已经失效，或者地址拼错了。下面几个入口应该能帮你找到要找的东西。
@@ -76,8 +77,14 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
+        {/* 移动端地址栏配色。默认值是深色底，内联脚本会按实际主题改写它 ——
+            所以 meta 必须排在脚本前面，否则脚本查不到它。 */}
+        <meta name="theme-color" content="#0c0b0a" />
+        {/* 首帧前定主题。站点是 prerender 的静态输出，HTML 里没有 <html class>，
+            这段脚本必须先于样式表生效，否则会先闪一下白底。 */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <HeadContent />
       </head>
       <body>

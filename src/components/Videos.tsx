@@ -31,14 +31,14 @@ export function Videos({
           title={
             title ?? (
               <>
-                我在镜头前<em className="italic text-primary">说</em>。
+                我在镜头前<em className="italic text-primary-text">说</em>。
               </>
             )
           }
           description={description ?? "深度长视频、工作日常 vlog、产品复盘。每月 2 支。"}
           action={
             showAction ? (
-              <Link to="/videos" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary">
+              <Link to="/videos" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text">
                 全部视频 →
               </Link>
             ) : undefined
@@ -72,7 +72,7 @@ export function Videos({
                 </div>
                 <div className="p-5">
                   <div className="mb-1 font-mono text-[10px] text-muted-foreground">{meta}</div>
-                  <h3 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary">
+                  <h3 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary-text">
                     {v.title}
                   </h3>
                 </div>

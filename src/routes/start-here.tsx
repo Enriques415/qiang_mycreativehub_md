@@ -86,7 +86,7 @@ function StartHere() {
 
       <article className="mx-auto max-w-4xl px-6 py-16 md:py-24">
         <header className="mb-16">
-          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary-text">
             00 / Start Here
           </div>
           <h1 className="font-display text-balance text-5xl font-light leading-[1.05] tracking-tight md:text-6xl">
@@ -125,7 +125,7 @@ function StartHere() {
               key={r.step}
               className="rounded-[2rem] border border-hairline bg-surface/40 p-6 md:p-8"
             >
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary-text">
                 {r.step}
               </div>
               <h3 className="mt-3 font-display text-2xl font-normal leading-snug text-foreground">
@@ -135,7 +135,7 @@ function StartHere() {
               <Link
                 to={r.to}
                 params={"params" in r ? r.params : undefined}
-                className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+                className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
               >
                 {r.cta} →
               </Link>
@@ -156,7 +156,7 @@ function StartHere() {
                 to={s.to}
                 className="group rounded-2xl border border-hairline bg-background p-6 transition-colors hover:border-primary/40 hover:bg-surface"
               >
-                <h3 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary">
+                <h3 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary-text">
                   {s.label}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>

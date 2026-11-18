@@ -42,7 +42,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="font-display text-balance text-[2.6rem] font-light leading-[1.08] tracking-tight md:text-6xl"
           >
-            用 <em className="italic text-primary">AI</em>
+            用 <em className="italic text-primary-text">AI</em>
             <br />
             把想法变成能销售的东西
           </motion.h1>
@@ -126,7 +126,7 @@ export function Hero() {
               <span className="cursor-blink" />
             </div>
           </div>
-          <div className="absolute -right-3 -top-3 hidden rounded-md border border-primary/40 bg-background/80 px-2 py-1 font-mono text-[10px] text-primary backdrop-blur md:block">
+          <div className="absolute -right-3 -top-3 hidden rounded-md border border-primary/40 bg-background/80 px-2 py-1 font-mono text-[10px] text-primary-text backdrop-blur md:block">
             v3.2.0
           </div>
         </motion.div>

@@ -49,7 +49,7 @@ function WorkPage() {
           title={
             <>
               作品：我做过的
-              <em className="italic text-primary">上线产品</em>
+              <em className="italic text-primary-text">上线产品</em>
             </>
           }
           description="从一行代码到上线产品。每一个都是我亲手设计、开发、运营的。"

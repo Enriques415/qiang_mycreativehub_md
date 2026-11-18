@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { isDifyConfigured } from "@/lib/dify";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { to: "/start-here", label: "从零开始" },
@@ -75,6 +76,7 @@ export function Nav() {
                 AI助手
               </Link>
             )}
+            <ThemeToggle />
             <Link
               to="/courses"
               className="rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
@@ -104,7 +106,7 @@ export function Nav() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-display text-3xl text-foreground transition-colors hover:text-primary"
+                className="font-display text-3xl text-foreground transition-colors hover:text-primary-text"
               >
                 {l.label}
               </Link>
@@ -113,7 +115,7 @@ export function Nav() {
               <Link
                 to="/chat"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 font-display text-3xl text-foreground transition-colors hover:text-primary"
+                className="flex items-center gap-2 font-display text-3xl text-foreground transition-colors hover:text-primary-text"
               >
                 <MessageCircle className="h-8 w-8" />
                 AI 助手
@@ -126,6 +128,7 @@ export function Nav() {
             >
               课程 →
             </Link>
+            <ThemeToggle className="mt-4" />
           </nav>
         </div>
       )}

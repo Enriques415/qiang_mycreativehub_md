@@ -23,7 +23,7 @@ export function Courses({ limit, headingLevel = 2, title, description }: Props =
           title={
             title ?? (
               <>
-                把走过的路，<em className="italic text-primary">分享给你</em>。
+                把走过的路，<em className="italic text-primary-text">分享给你</em>。
               </>
             )
           }

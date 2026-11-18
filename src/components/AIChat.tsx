@@ -172,7 +172,7 @@ export function AIChat() {
                   }`}
                 >
                   {message.role === "user" ? (
-                    <User className="h-4 w-4 text-primary" />
+                    <User className="h-4 w-4 text-primary-text" />
                   ) : (
                     <Bot className="h-4 w-4 text-muted-foreground" />
                   )}
@@ -205,7 +205,7 @@ export function AIChat() {
                   <Bot className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <div className="flex items-center gap-2 rounded-2xl border border-hairline bg-surface px-4 py-3">
-                  <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                  <Loader2 className="h-4 w-4 animate-spin text-primary-text" />
                   <span className="font-mono text-xs text-muted-foreground">思考中...</span>
                 </div>
               </div>

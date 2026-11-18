@@ -58,7 +58,7 @@ function NewsPage() {
 
       <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <header className="mb-12">
-          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary-text">
             06 / News
           </div>
           <h1 className="font-display text-balance text-5xl font-light leading-[1.05] tracking-tight md:text-6xl">
@@ -76,7 +76,7 @@ function NewsPage() {
               className="group border-b border-hairline py-8 first:pt-0 last:border-b-0"
             >
               <div className="mb-3 flex items-center gap-3 font-mono text-xs text-muted-foreground">
-                <span className="text-primary">
+                <span className="text-primary-text">
                   {String(items.length - index).padStart(2, "0")}
                 </span>
                 <span className="h-px w-4 bg-hairline" />
@@ -84,7 +84,7 @@ function NewsPage() {
               </div>
 
               <a href={item.url} target="_blank" rel="noopener noreferrer" className="block">
-                <h2 className="font-display text-2xl font-normal leading-tight text-foreground transition-colors group-hover:text-primary md:text-3xl">
+                <h2 className="font-display text-2xl font-normal leading-tight text-foreground transition-colors group-hover:text-primary-text md:text-3xl">
                   {item.title}
                 </h2>
               </a>
@@ -97,7 +97,7 @@ function NewsPage() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary"
+                className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary-text"
               >
                 阅读原文
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>

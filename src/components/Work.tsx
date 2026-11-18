@@ -31,7 +31,7 @@ export function Work({
           title={
             title ?? (
               <>
-                正在做的<em className="italic text-primary">东西</em>。
+                正在做的<em className="italic text-primary-text">东西</em>。
               </>
             )
           }
@@ -40,7 +40,7 @@ export function Work({
           }
           action={
             showAction ? (
-              <Link to="/work" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary">
+              <Link to="/work" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text">
                 查看全部 →
               </Link>
             ) : undefined

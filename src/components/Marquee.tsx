@@ -19,7 +19,7 @@ export function Marquee() {
         {all.map((item, i) => (
           <span
             key={i}
-            className={i % 2 === 1 ? "text-primary" : "italic text-foreground/60"}
+            className={i % 2 === 1 ? "text-primary-text" : "italic text-foreground/60"}
           >
             {item}
           </span>

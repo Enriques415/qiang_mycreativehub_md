@@ -23,13 +23,13 @@ export function Footer() {
             <Link
               key={l.to}
               to={l.to}
-              className="transition-colors hover:text-primary"
-              activeProps={{ className: "text-primary" }}
+              className="transition-colors hover:text-primary-text"
+              activeProps={{ className: "text-primary-text" }}
             >
               {l.label}
             </Link>
           ))}
-          <a href="/rss.xml" className="transition-colors hover:text-primary">
+          <a href="/rss.xml" className="transition-colors hover:text-primary-text">
             RSS
           </a>
         </nav>

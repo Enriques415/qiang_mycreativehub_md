@@ -46,7 +46,7 @@ export const Route = createFileRoute("/writing/$slug")({
   notFoundComponent: () => (
     <section className="mx-auto max-w-3xl px-6 py-24 text-center">
       <h1 className="font-display text-4xl">未找到这篇文章</h1>
-      <Link to="/writing" className="mt-6 inline-block font-mono text-xs text-primary">
+      <Link to="/writing" className="mt-6 inline-block font-mono text-xs text-primary-text">
         ← 回到 Writing
       </Link>
     </section>
@@ -65,7 +65,7 @@ function WritingDetail() {
     <article className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <Link
         to="/writing"
-        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
       >
         ← Writing
       </Link>
@@ -74,7 +74,7 @@ function WritingDetail() {
         <div>
           <header className="rounded-[2rem] border border-hairline bg-surface/40 p-8 shadow-card md:p-10 xl:p-12">
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground">
-              <span className="text-primary">Essay</span>
+              <span className="text-primary-text">Essay</span>
               <span className="h-px w-6 bg-hairline" />
               {entry.tag && <span>{entry.tag}</span>}
               {entry.date && (
@@ -109,7 +109,7 @@ function WritingDetail() {
                 返回文章列表
               </Link>
               {entry.tag && (
-                <div className="rounded-full bg-primary/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
+                <div className="rounded-full bg-primary/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-primary-text">
                   {entry.tag}
                 </div>
               )}
@@ -137,7 +137,7 @@ function WritingDetail() {
               </div>
               <Link
                 to="/writing"
-                className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+                className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
               >
                 查看全部文章 →
               </Link>
@@ -154,7 +154,7 @@ function WritingDetail() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                   ← 上一篇
                 </span>
-                <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+                <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
                   {prev.title}
                 </span>
               </Link>
@@ -170,7 +170,7 @@ function WritingDetail() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                   下一篇 →
                 </span>
-                <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+                <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
                   {next.title}
                 </span>
               </Link>

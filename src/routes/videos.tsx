@@ -47,7 +47,7 @@ function VideosPage() {
           title={
             <>
               视频：我在镜头前
-              <em className="italic text-primary">说</em>。
+              <em className="italic text-primary-text">说</em>。
             </>
           }
           description="深度长视频、工作日常 vlog、产品复盘。慢，但尽量不说废话。"

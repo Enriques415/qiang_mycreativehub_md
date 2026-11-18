@@ -38,7 +38,7 @@ export function Writing({
           title={
             title ?? (
               <>
-                我<em className="italic text-primary">想清楚</em>的事。
+                我<em className="italic text-primary-text">想清楚</em>的事。
               </>
             )
           }
@@ -48,7 +48,7 @@ export function Writing({
           }
           action={
             showAction ? (
-              <Link to="/writing" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary">
+              <Link to="/writing" className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text">
                 全部文章 →
               </Link>
             ) : undefined
@@ -67,7 +67,7 @@ export function Writing({
                   {formatDate(post.date)}
                 </div>
                 <div className="col-span-12 md:col-span-7">
-                  <h3 className="font-display text-2xl font-normal leading-tight text-foreground transition-colors group-hover:text-primary md:text-3xl">
+                  <h3 className="font-display text-2xl font-normal leading-tight text-foreground transition-colors group-hover:text-primary-text md:text-3xl">
                     {post.title}
                   </h3>
                   {post.excerpt && <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>}
@@ -75,7 +75,7 @@ export function Writing({
                 <div className="col-span-6 font-mono text-xs text-muted-foreground md:col-span-2">
                   {post.tag} {post.readTime ? `· ${post.readTime}` : ""}
                 </div>
-                <div className="col-span-6 text-right font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary md:col-span-1">
+                <div className="col-span-6 text-right font-mono text-xs text-muted-foreground transition-colors group-hover:text-primary-text md:col-span-1">
                   →
                 </div>
               </Link>

@@ -29,7 +29,7 @@ export const Route = createFileRoute("/work/$slug")({
   notFoundComponent: () => (
     <section className="mx-auto max-w-3xl px-6 py-24 text-center">
       <h1 className="font-display text-4xl">未找到这个项目</h1>
-      <Link to="/work" className="mt-6 inline-block font-mono text-xs text-primary">
+      <Link to="/work" className="mt-6 inline-block font-mono text-xs text-primary-text">
         ← 回到 Work
       </Link>
     </section>
@@ -48,14 +48,14 @@ function WorkDetail() {
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <Link
         to="/work"
-        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
       >
         ← Work
       </Link>
 
       <header className="mt-8 rounded-[2rem] border border-hairline bg-surface/40 p-8 md:p-10">
         <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground">
-          <span className="text-primary">Project</span>
+          <span className="text-primary-text">Project</span>
           {entry.tag && (
             <>
               <span className="h-px w-6 bg-hairline" />
@@ -141,7 +141,7 @@ function WorkDetail() {
           </div>
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+            className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
           >
             查看全部项目 →
           </Link>
@@ -158,7 +158,7 @@ function WorkDetail() {
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               ← 上一个
             </span>
-            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
               {prev.title}
             </span>
           </Link>
@@ -174,7 +174,7 @@ function WorkDetail() {
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               下一个 →
             </span>
-            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
               {next.title}
             </span>
           </Link>

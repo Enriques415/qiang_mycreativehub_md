@@ -27,7 +27,7 @@ export const Route = createFileRoute("/courses/$slug")({
   notFoundComponent: () => (
     <section className="mx-auto max-w-3xl px-6 py-24 text-center">
       <h1 className="font-display text-4xl">未找到这门课程</h1>
-      <Link to="/courses" className="mt-6 inline-block font-mono text-xs text-primary">
+      <Link to="/courses" className="mt-6 inline-block font-mono text-xs text-primary-text">
         ← 回到 Courses
       </Link>
     </section>
@@ -44,14 +44,14 @@ function CourseDetail() {
     <article className="mx-auto max-w-5xl px-6 py-16 md:py-24">
       <Link
         to="/courses"
-        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
       >
         ← Courses
       </Link>
 
       <header className="mt-8 rounded-[2rem] border border-hairline bg-surface/40 p-8 md:p-10">
         <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground">
-          <span className="text-primary">Course</span>
+          <span className="text-primary-text">Course</span>
           {entry.tag && (
             <>
               <span className="h-px w-6 bg-hairline" />
@@ -61,7 +61,7 @@ function CourseDetail() {
           {entry.badge && (
             <>
               <span className="h-px w-6 bg-hairline" />
-              <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-primary">
+              <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-primary-text">
                 {entry.badge}
               </span>
             </>
@@ -192,7 +192,7 @@ function CourseDetail() {
           </div>
           <Link
             to="/courses"
-            className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+            className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
           >
             查看全部课程 →
           </Link>
@@ -209,7 +209,7 @@ function CourseDetail() {
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               ← 上一门
             </span>
-            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
               {prev.title}
             </span>
           </Link>
@@ -225,7 +225,7 @@ function CourseDetail() {
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
               下一门 →
             </span>
-            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary">
+            <span className="font-display text-lg leading-snug text-foreground transition-colors group-hover:text-primary-text">
               {next.title}
             </span>
           </Link>

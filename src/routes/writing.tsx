@@ -52,7 +52,7 @@ function WritingPage() {
           title={
             <>
               写作：独立开发、AI 工作流
-              <em className="italic text-primary">与真实复盘</em>
+              <em className="italic text-primary-text">与真实复盘</em>
             </>
           }
           description="每两周一篇，记录独立工作里的真实思考 —— 不是方法论，是复盘。"

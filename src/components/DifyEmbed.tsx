@@ -33,7 +33,7 @@ export function DifyEmbed() {
     style.setAttribute("data-dify-embed", "true");
     style.textContent = `
       #dify-chatbot-bubble-button {
-        background-color: oklch(0.86 0.22 145) !important;
+        background-color: var(--primary) !important;
         width: 56px !important;
         height: 56px !important;
         bottom: 24px !important;
@@ -41,55 +41,55 @@ export function DifyEmbed() {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
       }
       #dify-chatbot-bubble-button svg {
-        fill: oklch(0.18 0.01 145) !important;
+        fill: var(--primary-foreground) !important;
       }
       #dify-chatbot-bubble-window {
         width: 400px !important;
         height: 600px !important;
         max-height: calc(100vh - 120px) !important;
         border-radius: 12px !important;
-        border: 1px solid oklch(0.32 0.008 70) !important;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4) !important;
+        border: 1px solid var(--hairline) !important;
+        box-shadow: var(--shadow-card) !important;
         overflow: hidden !important;
       }
       #dify-chatbot-window-container {
-        background-color: oklch(0.16 0.005 60) !important;
+        background-color: var(--background) !important;
       }
       #dify-chatbot-close-button {
-        color: oklch(0.95 0.02 80) !important;
+        color: var(--foreground) !important;
       }
       #dify-chatbot-input-holder {
-        background-color: oklch(0.19 0.006 60) !important;
-        border-color: oklch(0.32 0.008 70) !important;
+        background-color: var(--surface) !important;
+        border-color: var(--hairline) !important;
       }
       #dify-chatbot-text-input {
-        color: oklch(0.95 0.02 80) !important;
+        color: var(--foreground) !important;
         background-color: transparent !important;
       }
       #dify-chatbot-text-input::placeholder {
-        color: oklch(0.68 0.015 80) !important;
+        color: var(--muted-foreground) !important;
       }
       #dify-chatbot-send-btn {
-        background-color: oklch(0.86 0.22 145) !important;
+        background-color: var(--primary) !important;
       }
       #dify-chatbot-message-container {
-        background-color: oklch(0.16 0.005 60) !important;
+        background-color: var(--background) !important;
       }
       .dify-message-item {
-        background-color: oklch(0.19 0.006 60) !important;
-        color: oklch(0.95 0.02 80) !important;
+        background-color: var(--surface) !important;
+        color: var(--foreground) !important;
         border-radius: 16px !important;
       }
       .dify-user-message {
-        background-color: oklch(0.86 0.22 145) !important;
-        color: oklch(0.18 0.01 145) !important;
+        background-color: var(--primary) !important;
+        color: var(--primary-foreground) !important;
       }
       .dify-chatbot-footer {
-        background-color: oklch(0.16 0.005 60) !important;
-        border-top-color: oklch(0.32 0.008 70) !important;
+        background-color: var(--background) !important;
+        border-top-color: var(--hairline) !important;
       }
       .dify-chatbot-footer-text {
-        color: oklch(0.68 0.015 80) !important;
+        color: var(--muted-foreground) !important;
       }
     `;
     document.head.appendChild(style);

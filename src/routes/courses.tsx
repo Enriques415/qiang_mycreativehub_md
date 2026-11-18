@@ -46,7 +46,7 @@ function CoursesPage() {
           title={
             <>
               课程：我把走过的路，
-              <em className="italic text-primary">教给你</em>。
+              <em className="italic text-primary-text">教给你</em>。
             </>
           }
           description="不是教程合集，是我自己每天都在用的方法论。"

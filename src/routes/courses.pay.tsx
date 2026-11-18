@@ -21,7 +21,7 @@ export const Route = createFileRoute("/courses/pay")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-2xl px-6 py-24 text-center">
       <h1 className="font-display text-3xl">课程不存在</h1>
-      <Link to="/courses" className="mt-6 inline-block text-primary">
+      <Link to="/courses" className="mt-6 inline-block text-primary-text">
         ← 返回课程列表
       </Link>
     </div>
@@ -38,7 +38,7 @@ function PayPage() {
     const courses = loadCourses();
     return (
       <main className="mx-auto min-h-screen max-w-3xl px-6 pt-36 pb-24">
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary-text">
           报名
         </div>
         <h1 className="mt-3 font-display text-4xl font-light">选一门课开始</h1>
@@ -55,7 +55,7 @@ function PayPage() {
                 className="group flex items-center justify-between gap-4 py-5 transition-colors hover:bg-surface"
               >
                 <div className="min-w-0">
-                  <h2 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary">
+                  <h2 className="font-display text-xl font-normal text-foreground transition-colors group-hover:text-primary-text">
                     {c.title}
                   </h2>
                   {c.excerpt && (
@@ -74,7 +74,7 @@ function PayPage() {
 
         <Link
           to="/courses"
-          className="mt-8 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+          className="mt-8 inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
         >
           ← 返回课程列表
         </Link>
@@ -86,16 +86,16 @@ function PayPage() {
     <main className="mx-auto max-w-2xl px-6 pt-36 pb-24">
       <Link
         to="/courses"
-        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+        className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground transition-colors hover:text-primary-text"
       >
         ← 返回课程列表
       </Link>
 
       <div className="mt-12 rounded-[2rem] border border-hairline bg-surface/40 p-8 md:p-10">
         <div className="text-center">
-          <span className="font-mono text-xs text-primary">报名课程</span>
+          <span className="font-mono text-xs text-primary-text">报名课程</span>
           <h1 className="mt-3 font-display text-3xl">{course.title}</h1>
-          <p className="mt-4 font-display text-5xl text-primary">{course.price}</p>
+          <p className="mt-4 font-display text-5xl text-primary-text">{course.price}</p>
         </div>
 
         <div className="mt-10 space-y-6">

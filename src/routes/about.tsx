@@ -62,7 +62,7 @@ function AboutPage() {
 
       <article className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <header className="mb-12">
-          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+          <div className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-primary-text">
             05 / About
           </div>
           <h1 className="font-display text-5xl font-light tracking-tight text-foreground md:text-6xl">
