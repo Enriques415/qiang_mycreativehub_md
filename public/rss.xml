@@ -6,7 +6,14 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[能并行还不够，我更在意问题回到哪]]></title>
+      <link>https://digiwild.cc/writing/where-questions-come-back</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/where-questions-come-back</guid>
+      <description><![CDATA[Anthropic 给 Claude Code 的 Projects 加了 coordinator：你只跟一个入口说话，并行的线程自己去跑，有结果或问题再汇总回来。Boris Cherny 说，真正难受的是注意力被拆碎。对我来说，一个人用 AI 跑生意，稀缺的不是又能多开几路 Agent，而是问题还能回到同一处。]]></description>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[同一份活，我不想让它每次再想一遍]]></title>
       <link>https://digiwild.cc/writing/dont-rethink-the-same-job</link>
