@@ -23,6 +23,14 @@ Jamstack 静态站：React 19 + Vite 7 + TanStack Router/Start + Tailwind 4 + sh
 - `scripts/push_to_github.py` 是**写入方那台机器**的工具，本机永远不运行它。
 - 其它内容目录（`works/` `videos/` `courses/` `news/` `about.md`）本地随便写。
 
+⚠️ **飞书同步机只推 `content/writings/`，从不重新生成 `data/*.json` 和 `public/*.xml`。**
+所以 `git pull` 到新文章后，`data/writings.json`、`public/sitemap.xml`、`public/rss.xml`、
+`public/llms.txt` 在远端是**过期的**。合并完必须本地跑一次 `npm run build`
+（= sync:content → generate-seo-files → vite build）把产物补上再提交，
+否则线上会漏掉那几篇文章（首页计数、sitemap、RSS 都会少）。
+实测踩过：合并后 `data/writings.json` 少了 3 篇新文章，git 合并**不会报错**——
+JSON 数组的合并结果不可信，只能靠重新生成来定。
+
 ### 2. 依赖版本比你的训练数据新 —— 先读源码再写代码
 
 Vite 7 / TanStack Router & Start 1.16x / Tailwind 4 / React 19 的用法与常见的旧写法**有破坏性差异**。
