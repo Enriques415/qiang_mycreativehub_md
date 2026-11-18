@@ -6,7 +6,7 @@ date: "2026-11-17"
 publishedAt: "2026-11-17"
 tag: "随笔"
 tags: []
-status: draft
+status: published
 featured: false
 ---
 上周五，也就是 11 月 13 日，OpenAI 发布了 [ChatGPT Wallet](https://openai.com/index/introducing-chatgpt-wallet/)。官方的说法很明确：这是第一个让 Agent 能付款、却拿不到用户真实卡号的钱包；每一笔都要经过一次安全校验。
