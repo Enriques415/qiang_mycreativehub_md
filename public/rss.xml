@@ -6,7 +6,21 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[沙箱开了还不够，我更在意它碰得到什么]]></title>
+      <link>https://digiwild.cc/writing/sandbox-isnt-the-boundary</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/sandbox-isnt-the-boundary</guid>
+      <description><![CDATA[Simon Willison 和 Prime Radiant 在 11 月 16 日放出「外部沙箱」原型：Agent 留在你的 Mac 上，命令进到只能看到你挂载目录、默认没有外网的 Linux 环境里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能自己跑命令，而是沙箱开了之后，边界到底画在哪。]]></description>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[能代我付款还不够，我更在意卡在谁手里]]></title>
+      <link>https://digiwild.cc/writing/card-stays-out-of-its-hands</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/card-stays-out-of-its-hands</guid>
+      <description><![CDATA[OpenAI 给 ChatGPT 的个人 Agent dots 加了钱包：卡只存一次，每次购买要你核对并做生物识别，真正拿去结账的是支付网络生成的令牌，真实卡号不会进 Agent 或商家手里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能代付，而是卡始终不经过它。]]></description>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[能并行还不够，我更在意问题回到哪]]></title>
       <link>https://digiwild.cc/writing/where-questions-come-back</link>
