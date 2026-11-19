@@ -1,18 +1,14 @@
 ---
-slug: link-the-bill-keep-the-key
-title: 钥匙不必交出去，还得看请求跑在谁那边
-excerpt: Anthropic 在 11 月 17 日给 Claude Platform 放了链接账单：第三方工具可以让你用自己的 Claude 账户付 API 费用，而不必再把 API 钥匙交出去。你可以给每个工具设限额，随时取消关联。对我来说，一个人用 AI 跑生意，稀缺的不是又能在更多工具里调用 Claude，而是钥匙留下之后，还得看清请求实际跑在谁那边。
-date: '2026-11-19'
-publishedAt: '2026-11-19'
-tag: 随笔
-tags: [产品设计, 独立开发, Agent]
-readTime: 7 min
+slug: "link-the-bill-keep-the-key"
+title: "钥匙不必交出去，还得看请求跑在谁那边"
+excerpt: "Anthropic 在 11 月 17 日给 Claude Platform 放了链接账单：第三方工具可以让你用自己的 Claude 账户付 API 费用，而不必再把 API 钥匙交出去。你可以给每个工具设限额，随时取消关联。对我来说，一个人用 AI 跑生意，稀缺的不是又能在更多工具里调用 Claude，而是钥匙留下之后，还得看清请求实际跑在谁那边。"
+date: "2026-11-19"
+publishedAt: "2026-11-19"
+tag: "随笔"
+tags: []
 status: published
 featured: false
 ---
-
-# 钥匙不必交出去，还得看请求跑在谁那边
-
 11 月 17 日，Anthropic 在 Claude Platform 上放出了 [linked billing](https://claude.com/resources/articles/linked-billing-on-claude-platform)，也就是链接账单，目前还是 beta。它要解决的事情很具体：你在第三方工具里用 Claude，不必再把 API 钥匙交出去；费用直接记到你自己的 Claude 账户上。
 
 这件事我几乎每周都会碰到。要用一个写作、自动化，或者 coding agent 工具，常见的第一步就是：把 Anthropic 的 API key 贴进对方的设置页。钥匙一旦交出去，就相当于把能记账的密码给了别人。对方说会妥善保管，可对我来说，风险已经换了边。
