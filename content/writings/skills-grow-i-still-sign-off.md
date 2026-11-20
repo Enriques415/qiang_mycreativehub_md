@@ -1,18 +1,14 @@
 ---
-slug: skills-grow-i-still-sign-off
-title: 技能可以自己长，放行权还在我这边
-excerpt: 11 月 18 日，Perplexity 让 Brain 开始根据使用记录，自动为 Computer 这个 Agent 编写和更新个人技能，而且对美国 Max 用户默认打开。对我来说，一个人用 AI 跑生意，真正要看的不是它会不会自己长出套路，而是这些套路在启用之前，我能不能先读一遍、决定放不放行，并且把确认过的版本留在自己还能打开的地方。
-date: '2026-11-21'
-publishedAt: '2026-11-21'
-tag: 随笔
+slug: "skills-grow-i-still-sign-off"
+title: "技能可以自己长，放行权还在我这边"
+excerpt: "11 月 18 日，Perplexity 让 Brain 根据使用记录，自动为 Computer 编写和更新个人技能，且对美国 Max 用户默认打开。对我来说，技能可以自己长，但启用之前我要先读过，并把确认过的版本留在自己还能打开的地方。"
+date: "2026-11-21"
+publishedAt: "2026-11-21"
+tag: "随笔"
 tags: []
-readTime: 8 min
 status: published
 featured: false
 ---
-
-# 技能可以自己长，放行权还在我这边
-
 11 月 18 日，Perplexity 宣布，它的个性化系统 Brain 开始给 Computer 这个 Agent [自动编写和更新技能](https://www.perplexity.ai/hub/blog/self-improving-skills)。技能就是一套可复用的说明书：某类活怎么做、先看什么、用哪些资源。以前多半要你自己写，或者每次再解释一遍；现在它会从你的使用记录里，把反复出现的做法收成技能，而且对美国的 Max 用户默认打开。
 
 我前几天刚写过：同一份活，我不想让它每次再想一遍。那时候我站的位置很清楚——想过一次的流程，应该被写下来，被我看过，然后再跑。Brain 做的事，看起来正好朝这个方向走。可我读完几次报道，真正停下来的不是「它会写了」，而是另一件更具体的事：个人技能通过校验之后，会直接写进你的技能库，供以后的会话使用。也就是说，套路不仅会长出来，还会自己上岗。

@@ -1,18 +1,14 @@
 ---
-slug: merge-isnt-the-backlog
-title: 合并权留着还不够，我更在意下一件事谁来排
-excerpt: Google Labs 在 11 月 18 日放出 Stitch Loop：一个能连上代码仓库和线上指标、按你定的目标一直跑下去的产品 Agent。它会提出改动、在沙箱里写代码，并开出等你审批的 PR。对我来说，一个人用 AI 跑生意，稀缺的不是又多了一个能通宵改产品的循环，而是目标交给它之后，下一件事先由谁来排。
-date: '2026-11-20'
-publishedAt: '2026-11-20'
-tag: 随笔
-tags: [产品设计, 独立开发, Agent]
-readTime: 6 min
+slug: "merge-isnt-the-backlog"
+title: "合并权留着还不够，我更在意下一件事谁来排"
+excerpt: "Google Labs 在 11 月 18 日放出 Stitch Loop：一个能连上代码仓库和线上指标、按你定的目标一直跑下去的产品 Agent。它会提出改动、在沙箱里写代码，并开出等你审批的 PR。对我来说，一个人用 AI 跑生意，稀缺的不是又多了一个能通宵改产品的循环，而是目标交给它之后，下一件事先由谁来排。"
+date: "2026-11-20"
+publishedAt: "2026-11-20"
+tag: "随笔"
+tags: []
 status: published
 featured: false
 ---
-
-# 合并权留着还不够，我更在意下一件事谁来排
-
 11 月 18 日，Google Labs 的 Justin Toupin 介绍了 [Stitch Loop](https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/)。这是 Stitch 的新方向，目前还是实验：一个会长期跑下去的产品 Agent，连上你的代码仓库和线上指标，再按你定的目标，一直找还能改哪里。
 
 这件事并不陌生。写功能和修页面，现在已有不少 coding agent 能帮忙。可官方也说得很直：它们的工作，往往在 pull request 合并的那一刻就结束了。代码一上线，真正费神的是另一截——漏洞、变慢的结算、埋在反馈里的注册流失。一个人同时跑内容和生意，这一截常常是夜里才有空看的。
