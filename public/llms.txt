@@ -13,16 +13,16 @@
 
 ## 精选文章
 
+- [合并权留着还不够，我更在意下一件事谁来排](https://digiwild.cc/writing/merge-isnt-the-backlog)：Google Labs 在 11 月 18 日放出 Stitch Loop：一个能连上代码仓库和线上指标、按你定的目标一直跑下去的产品 Agent。它会提出改动、在沙箱里写代码，并开出等你审批的 PR。对我来说，一个人用 AI 跑生意，稀缺的不是又多了一个能通宵改产品的循环，而是目标交给它之后，下一件事先由谁来排。
+- [钥匙不必交出去，还得看请求跑在谁那边](https://digiwild.cc/writing/link-the-bill-keep-the-key)：Anthropic 在 11 月 17 日给 Claude Platform 放了链接账单：第三方工具可以让你用自己的 Claude 账户付 API 费用，而不必再把 API 钥匙交出去。你可以给每个工具设限额，随时取消关联。对我来说，一个人用 AI 跑生意，稀缺的不是又能在更多工具里调用 Claude，而是钥匙留下之后，还得看清请求实际跑在谁那边。
 - [沙箱开了还不够，我更在意它碰得到什么](https://digiwild.cc/writing/sandbox-isnt-the-boundary)：Simon Willison 和 Prime Radiant 在 11 月 16 日放出「外部沙箱」原型：Agent 留在你的 Mac 上，命令进到只能看到你挂载目录、默认没有外网的 Linux 环境里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能自己跑命令，而是沙箱开了之后，边界到底画在哪。
 - [能代我付款还不够，我更在意卡在谁手里](https://digiwild.cc/writing/card-stays-out-of-its-hands)：OpenAI 给 ChatGPT 的个人 Agent dots 加了钱包：卡只存一次，每次购买要你核对并做生物识别，真正拿去结账的是支付网络生成的令牌，真实卡号不会进 Agent 或商家手里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能代付，而是卡始终不经过它。
 - [能并行还不够，我更在意问题回到哪](https://digiwild.cc/writing/where-questions-come-back)：Anthropic 给 Claude Code 的 Projects 加了 coordinator：你只跟一个入口说话，并行的线程自己去跑，有结果或问题再汇总回来。Boris Cherny 说，真正难受的是注意力被拆碎。对我来说，一个人用 AI 跑生意，稀缺的不是又能多开几路 Agent，而是问题还能回到同一处。
-- [同一份活，我不想让它每次再想一遍](https://digiwild.cc/writing/dont-rethink-the-same-job)：AgentRun 把重复的知识工作从「每次重新想」收成可复用的流程，Antigravity 则让计划变成一审再跑的脚本。对我来说，一个人用 AI 跑生意，关键不是它今天更会即兴发挥，而是想过一次的活，能被写下来、被我看过，然后再跑。
-- [少说话不够，我更在意它每次重读了什么](https://digiwild.cc/writing/speak-less-isnt-enough)：Julius Brussee 把「让 Claude 像洞穴人一样少说话」的笑话做成了 Caveman Code。我更在意的不是它说得少，而是他后来量出来的事实：真正贵的，是模型每一轮重新读进去的那些东西。
 
 ## 事实
 
 - 位置：中国上海
 - 语言：中文
-- 站内内容：15 篇文章、3 个上线产品、3 支视频、3 门在售课程
+- 站内内容：17 篇文章、3 个上线产品、3 支视频、3 门在售课程
 - 联系：https://digiwild.cc/about 页底部邮箱
 - 订阅：https://digiwild.cc/rss.xml

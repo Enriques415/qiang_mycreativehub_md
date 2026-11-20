@@ -6,7 +6,21 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[合并权留着还不够，我更在意下一件事谁来排]]></title>
+      <link>https://digiwild.cc/writing/merge-isnt-the-backlog</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/merge-isnt-the-backlog</guid>
+      <description><![CDATA[Google Labs 在 11 月 18 日放出 Stitch Loop：一个能连上代码仓库和线上指标、按你定的目标一直跑下去的产品 Agent。它会提出改动、在沙箱里写代码，并开出等你审批的 PR。对我来说，一个人用 AI 跑生意，稀缺的不是又多了一个能通宵改产品的循环，而是目标交给它之后，下一件事先由谁来排。]]></description>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[钥匙不必交出去，还得看请求跑在谁那边]]></title>
+      <link>https://digiwild.cc/writing/link-the-bill-keep-the-key</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/link-the-bill-keep-the-key</guid>
+      <description><![CDATA[Anthropic 在 11 月 17 日给 Claude Platform 放了链接账单：第三方工具可以让你用自己的 Claude 账户付 API 费用，而不必再把 API 钥匙交出去。你可以给每个工具设限额，随时取消关联。对我来说，一个人用 AI 跑生意，稀缺的不是又能在更多工具里调用 Claude，而是钥匙留下之后，还得看清请求实际跑在谁那边。]]></description>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[沙箱开了还不够，我更在意它碰得到什么]]></title>
       <link>https://digiwild.cc/writing/sandbox-isnt-the-boundary</link>
