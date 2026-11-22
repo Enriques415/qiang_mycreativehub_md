@@ -6,7 +6,14 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[模型能租，上下文不能]]></title>
+      <link>https://digiwild.cc/writing/model-can-be-rented-context-cannot</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/model-can-be-rented-context-cannot</guid>
+      <description><![CDATA[前 DeepSeek-VL 负责人张博开源了本地个人 Agent Linger：读邮件、看日历、操纵你已登录的浏览器，写动作走确认卡片而不是沙箱。12GB 显卡跑 125B 模型的数字很抢眼，但我更在意另一件事——一个人用 AI 跑生意，真正不能租出去的是上下文。]]></description>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[合并权留着还不够，我更在意下一件事谁来排]]></title>
       <link>https://digiwild.cc/writing/merge-isnt-the-backlog</link>
