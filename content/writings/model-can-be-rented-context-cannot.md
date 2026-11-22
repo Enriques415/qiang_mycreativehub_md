@@ -9,7 +9,6 @@ tags: []
 status: published
 featured: false
 ---
-
 11 月 19 日，前 DeepSeek V1 作者、DeepSeek-VL 项目负责人张博（Tony Zhang）在 X 上开源了 Linger，一家叫 Simplex AI 的公司做的个人 Agent。GitHub 地址在 [simplexai-labs/linger](https://github.com/simplexai-labs/linger)，几天内过了 2k star。
 
 他给的理由比产品本身更值得看。官宣帖里他拿 PC 的历史类比：1960 年代计算是中心化的，直到 PC 把权力交到每个人手里；今天 AI 在数据中心训练，再按 token 租给你。他说智能应该是分布式的——你的上下文、你的数据、驱动它们的智能，都应该完全属于你。
