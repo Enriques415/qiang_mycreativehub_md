@@ -6,13 +6,27 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[贵的大脑，便宜的手]]></title>
+      <link>https://digiwild.cc/writing/expensive-brain-cheap-hands</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/expensive-brain-cheap-hands</guid>
+      <description><![CDATA[MachinePulse 开源的 karpo-browser 把网页 Agent 拆成两层：大模型负责理解和规划，专用小模型负责点按钮。78% 的动作只吃掉 13% 的成本。这套「贵大脑、便宜手」的分工，也是一个人用 AI 跑生意最该抄的架构：把想和做分开算钱。]]></description>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[模型能租，上下文不能]]></title>
       <link>https://digiwild.cc/writing/model-can-be-rented-context-cannot</link>
       <guid isPermaLink="true">https://digiwild.cc/writing/model-can-be-rented-context-cannot</guid>
       <description><![CDATA[前 DeepSeek-VL 负责人张博开源了本地个人 Agent Linger：读邮件、看日历、操纵你已登录的浏览器，写动作走确认卡片而不是沙箱。12GB 显卡跑 125B 模型的数字很抢眼，但我更在意另一件事——一个人用 AI 跑生意，真正不能租出去的是上下文。]]></description>
       <pubDate>Sun, 22 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[技能可以自己长，放行权还在我这边]]></title>
+      <link>https://digiwild.cc/writing/skills-grow-i-still-sign-off</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/skills-grow-i-still-sign-off</guid>
+      <description><![CDATA[11 月 18 日，Perplexity 让 Brain 根据使用记录，自动为 Computer 编写和更新个人技能，且对美国 Max 用户默认打开。对我来说，技能可以自己长，但启用之前我要先读过，并把确认过的版本留在自己还能打开的地方。]]></description>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
       <title><![CDATA[合并权留着还不够，我更在意下一件事谁来排]]></title>

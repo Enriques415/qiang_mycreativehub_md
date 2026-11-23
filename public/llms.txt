@@ -13,16 +13,16 @@
 
 ## 精选文章
 
+- [贵的大脑，便宜的手](https://digiwild.cc/writing/expensive-brain-cheap-hands)：MachinePulse 开源的 karpo-browser 把网页 Agent 拆成两层：大模型负责理解和规划，专用小模型负责点按钮。78% 的动作只吃掉 13% 的成本。这套「贵大脑、便宜手」的分工，也是一个人用 AI 跑生意最该抄的架构：把想和做分开算钱。
 - [模型能租，上下文不能](https://digiwild.cc/writing/model-can-be-rented-context-cannot)：前 DeepSeek-VL 负责人张博开源了本地个人 Agent Linger：读邮件、看日历、操纵你已登录的浏览器，写动作走确认卡片而不是沙箱。12GB 显卡跑 125B 模型的数字很抢眼，但我更在意另一件事——一个人用 AI 跑生意，真正不能租出去的是上下文。
+- [技能可以自己长，放行权还在我这边](https://digiwild.cc/writing/skills-grow-i-still-sign-off)：11 月 18 日，Perplexity 让 Brain 根据使用记录，自动为 Computer 编写和更新个人技能，且对美国 Max 用户默认打开。对我来说，技能可以自己长，但启用之前我要先读过，并把确认过的版本留在自己还能打开的地方。
 - [合并权留着还不够，我更在意下一件事谁来排](https://digiwild.cc/writing/merge-isnt-the-backlog)：Google Labs 在 11 月 18 日放出 Stitch Loop：一个能连上代码仓库和线上指标、按你定的目标一直跑下去的产品 Agent。它会提出改动、在沙箱里写代码，并开出等你审批的 PR。对我来说，一个人用 AI 跑生意，稀缺的不是又多了一个能通宵改产品的循环，而是目标交给它之后，下一件事先由谁来排。
 - [钥匙不必交出去，还得看请求跑在谁那边](https://digiwild.cc/writing/link-the-bill-keep-the-key)：Anthropic 在 11 月 17 日给 Claude Platform 放了链接账单：第三方工具可以让你用自己的 Claude 账户付 API 费用，而不必再把 API 钥匙交出去。你可以给每个工具设限额，随时取消关联。对我来说，一个人用 AI 跑生意，稀缺的不是又能在更多工具里调用 Claude，而是钥匙留下之后，还得看清请求实际跑在谁那边。
-- [沙箱开了还不够，我更在意它碰得到什么](https://digiwild.cc/writing/sandbox-isnt-the-boundary)：Simon Willison 和 Prime Radiant 在 11 月 16 日放出「外部沙箱」原型：Agent 留在你的 Mac 上，命令进到只能看到你挂载目录、默认没有外网的 Linux 环境里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能自己跑命令，而是沙箱开了之后，边界到底画在哪。
-- [能代我付款还不够，我更在意卡在谁手里](https://digiwild.cc/writing/card-stays-out-of-its-hands)：OpenAI 给 ChatGPT 的个人 Agent dots 加了钱包：卡只存一次，每次购买要你核对并做生物识别，真正拿去结账的是支付网络生成的令牌，真实卡号不会进 Agent 或商家手里。对我来说，一个人用 AI 跑生意，稀缺的不是它终于能代付，而是卡始终不经过它。
 
 ## 事实
 
 - 位置：中国上海
 - 语言：中文
-- 站内内容：18 篇文章、3 个上线产品、3 支视频、3 门在售课程
+- 站内内容：20 篇文章、3 个上线产品、3 支视频、3 门在售课程
 - 联系：https://digiwild.cc/about 页底部邮箱
 - 订阅：https://digiwild.cc/rss.xml
