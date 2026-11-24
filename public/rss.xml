@@ -6,7 +6,14 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[一千四百行，打败一百万行]]></title>
+      <link>https://digiwild.cc/writing/1400-lines-beat-a-million</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/1400-lines-beat-a-million</guid>
+      <description><![CDATA[11 月 23 日开源的 Shoebox 用 Markdown 文件和 Docker 编排 Agent，只有约 1400 行代码。对一个人用 AI 跑生意的启发：你不需要一眼看不懂的「公司级平台」，复杂度不是能力，是没还的债。]]></description>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[执行力白菜价，管理才是硬活]]></title>
       <link>https://digiwild.cc/writing/execution-cheap-management-hard</link>
