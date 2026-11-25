@@ -6,7 +6,14 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[系统以为办成了，其实没有]]></title>
+      <link>https://digiwild.cc/writing/the-system-thought-it-worked</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/the-system-thought-it-worked</guid>
+      <description><![CDATA[一个用 AI 跑整家公司的人，把付款和邮件留在自己手里。他的系统曾把「银行接受了」当成「已付款」——没崩溃，也没幻觉，只是它以为事情发生了。一人公司最贵的错，往往就在这条缝里。]]></description>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[一千四百行，打败一百万行]]></title>
       <link>https://digiwild.cc/writing/1400-lines-beat-a-million</link>
