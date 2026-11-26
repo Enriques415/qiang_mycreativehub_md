@@ -6,7 +6,14 @@
     <atom:link href="https://digiwild.cc/rss.xml" rel="self" type="application/rss+xml" />
     <description>独立开发、AI 工作流与真实复盘，每两周一篇。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title><![CDATA[免费的助手，每天只有三十五句话]]></title>
+      <link>https://digiwild.cc/writing/thirty-five-messages-a-day</link>
+      <guid isPermaLink="true">https://digiwild.cc/writing/thirty-five-messages-a-day</guid>
+      <description><![CDATA[GIGAZINE 11 月 25 日实测 Talorys：一条命令把私人 AI 助手装进免费 Cloudflare 账户。同样一万 Neurons，短对话约 550 次，满上下文只够 35 条消息。免费不是价格，是产能上限——一人公司要按额度设计流程。]]></description>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[系统以为办成了，其实没有]]></title>
       <link>https://digiwild.cc/writing/the-system-thought-it-worked</link>
