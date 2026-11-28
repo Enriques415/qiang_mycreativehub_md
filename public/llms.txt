@@ -13,16 +13,16 @@
 
 ## 精选文章
 
+- [你的一句「不对」，是它夜里的课本](https://digiwild.cc/writing/corrections-are-night-school)：11 月 20 日建仓的 Songe，白天旁听你纠正本地 Agent，夜里把教训蒸馏成 LoRA 适配器；新版必须打赢旧版才准上岗。一人公司真正买不到的，是你每天说出口的那句「不对」——但前提是你把它存下来。
 - [免费的助手，每天只有三十五句话](https://digiwild.cc/writing/thirty-five-messages-a-day)：GIGAZINE 11 月 25 日实测 Talorys：一条命令把私人 AI 助手装进免费 Cloudflare 账户。同样一万 Neurons，短对话约 550 次，满上下文只够 35 条消息。免费不是价格，是产能上限——一人公司要按额度设计流程。
 - [系统以为办成了，其实没有](https://digiwild.cc/writing/the-system-thought-it-worked)：一个用 AI 跑整家公司的人，把付款和邮件留在自己手里。他的系统曾把「银行接受了」当成「已付款」——没崩溃，也没幻觉，只是它以为事情发生了。一人公司最贵的错，往往就在这条缝里。
 - [一千四百行，打败一百万行](https://digiwild.cc/writing/1400-lines-beat-a-million)：11 月 23 日开源的 Shoebox 用 Markdown 文件和 Docker 编排 Agent，只有约 1400 行代码。对一个人用 AI 跑生意的启发：你不需要一眼看不懂的「公司级平台」，复杂度不是能力，是没还的债。
 - [服务关掉，代码留下](https://digiwild.cc/writing/shut-down-the-service-keep-the-code)：同一天，OpenedBot 的作者关掉托管、把 Agent 控制台开源；OpenClaw 过一岁生日，394,867 星，已经进了基金会。两条路指向同一道题：一个人做产品，真正要设计的是「没有我也能跑」。
-- [执行力白菜价，管理才是硬活](https://digiwild.cc/writing/execution-cheap-management-hard)：Paperclip 从 3 月上线到 11 月 star 过了 11 万。它不造模型，只给一群 AI 建公司：组织架构、目标血缘、预算、审批、心跳。当执行变成白菜价，一个人跑生意最稀缺的能力从「会干」变成「会管」。但如果你只有一两个 agent，这套公司制度就是过度工程。
 
 ## 事实
 
 - 位置：中国上海
 - 语言：中文
-- 站内内容：25 篇文章、3 个上线产品、3 支视频、3 门在售课程
+- 站内内容：26 篇文章、3 个上线产品、3 支视频、3 门在售课程
 - 联系：https://digiwild.cc/about 页底部邮箱
 - 订阅：https://digiwild.cc/rss.xml
